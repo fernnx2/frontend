@@ -11,7 +11,7 @@ class MarcaResourceClient extends AbstractResourceClient{
         return fetch(this.url);
     }
     findByName(nombre){
-        return fetch(this.url+"marca/marca" +nombre);
+        return fetch(this.url+"marca/marca" + nombre);
     }
 
 }

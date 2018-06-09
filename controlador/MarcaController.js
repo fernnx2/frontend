@@ -24,5 +24,5 @@ class MarcaController {
 
    
 }
-
-export default MarcaController;
+let a = new MarcaController();
+export default a.findAllResource();
