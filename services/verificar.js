@@ -14,14 +14,13 @@ estadoSol.controller('ver', function($scope) {
         $scope.datos2 =[];
         let estado = o.findEstadoSolicitud(tiket.value);
         let solicitud = o.findSolicitud(tiket.value);
-        
     estado.then(function(response) {
         console.log(response);
         $scope.$apply(function(){
             $scope.datos = response.estado;
+            
         });
-       
-        
+      
     }, function(err) {
         console.log(err);
     });
@@ -34,7 +33,7 @@ estadoSol.controller('ver', function($scope) {
     }, function(err) {
         console.log(err);
     });
-     console.log($scope.datos2);
+     
     }
    
     

@@ -1,41 +1,26 @@
-<html>
-    <template>
-        <table>
-            <thead></thead>
-            <tbody></tbody>
-        </table>
-        <style>
-            table {
-                font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-                font-size: 15px;   
-                width: 100%; text-align: left;    
-                border-collapse: collapse; }
-               
+
     
-            th {     
-                font-size: 18px;     
-                font-weight: normal;     
-                padding: 8px;     
-                background: #b9c9fe;
-                border-top: 4px solid #aabcfe;    
-                border-bottom: 1px solid #fff; 
-                color: #039; }
-    
-            td {    
-                padding: 8px;     
-                background: #e8edff;     
-                border-bottom: 1px solid #fff;
-                color: #669;    
-                border-top: 1px solid transparent; }
-    
-            tr:hover td { 
-                background: #d0dafd; 
-                color: #339; }
-        </style>
-    </template>
     <script>
         
+        class TablaData extends HTMLElement{
+           
+            constructor(){
+                super();
+                this.shadowDom =this.attachShadow({mode:'open'});
+                
+            }
+
+            connectedCallback(){
+                let template = document.querySelector('template').content;
+                let clone = template.cloneNode(true);
+    
+                this.shadowDom.appendChild(clone);
+                
+                
+            }
+        }
+        customElements.define('tabla-data',TablaData);
+    
     
     
     </script>
-</html>

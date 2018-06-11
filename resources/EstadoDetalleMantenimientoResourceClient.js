@@ -12,11 +12,11 @@ class EstadoDetalleMantenimientoResourceClient extends AbstractResourceClient {
     }
 
     mantenimientosTerminados(){
-        return fetch(this.url + "/mantenimientoterminado");
+        return fetch(this.url + "/estado/terminado");
     }
 
     mantenimientosNoTerminados(){
-        return fetch(this.url + "/mantenimientonoterminado");
+        return fetch(this.url + "/estado/noterminado");
     }
 
 

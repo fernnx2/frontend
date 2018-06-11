@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="estadoSol">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="import" href="./components/Formulario.html">
     <link rel="stylesheet" href="./src/css/ed-grid.min.css">
     <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="./src/components/menu.css">
     <link rel="stylesheet" type="text/css" href="./src/components/input.css">
     <link rel="stylesheet" type="text/css" href="./src/components/icon.css">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="./src/components/item.min.css">
     <link rel="stylesheet" href="./src/components/label.min.css">
     <link rel="stylesheet" href="./src/components/menu.min.css">
-     
+    
     <!--- Scripts -->
     <script src="./src/js/angular.min.js" ></script>
       <script src="./src/js/jquery.min.js"></script>
@@ -27,11 +27,14 @@
     
     <!--Servicios-->  
     <script src="./services/verificar.js" type="module"></script>
+    
+  <title>Inicio</title>
+
+
   
-  
-      <title>Inicio</title>
+
   </head>
-  <body class="" ng-app="estadoSol">
+  <body class="" >
       
   <div class="ui stackable menu">
     <div class="item">
@@ -40,8 +43,9 @@
     <a class="item" href="./index.html">Cliente</a>
     <a class="item" href="./Usuario.html">Usuario</a>
     <a class="item" href="./solicitud.html">Solicitud</a>
+    <a class="item" href="./Mantenimientos.html">Mantenimientos</a>
     <div class="menu ed-container">
-
+      
     <div class="item ">
     <div class="ed-item m-40">
         <div> <h5>Ver Estado Solicitud</h5></div>
@@ -58,7 +62,7 @@
     <div class="item">
             <div class="">
                     <div class="ui labeled button">
-                     <button id="verificar">Verificar</button>
+                     <button id="verificar" class="ui button blue">Verificar</button>
                     </div>
             </div>
     </div>
@@ -72,7 +76,11 @@
             <div class="ed-container" ng-controller="ver"> 
                     <div class="ed-item">
                     <table class="ui ed-item celled table">
-                        <h4>Estado  :{{datos}}</h4>
+                      <div class="ui info message" id="mensaje">
+                        <div class="header">
+                            Estado  :{{datos}}
+                        </div>
+                      </div>
                       <thead class="">
                       <th>ticket</th>
                       <th>Reponsable</th>
@@ -90,6 +98,7 @@
                         </tr>
                      
                       </tbody>
+                      
                     </table>
                     </div>
                   </div>
@@ -101,10 +110,9 @@
 
 
  
+
+
   
-
-
-    
 </body>
 
 </html>

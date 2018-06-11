@@ -9,9 +9,9 @@ class EstadoDetalleMantenimientoController {
         console.log("se inicio la peticion!");
         this.edrc = new EstadoDetalleMantenimientoResourceClient();
 
-        this.edrc.mantenimientosTerminados().then(function(response){
+       return this.edrc.mantenimientosTerminados().then(function(response){
             if(response.ok){
-                console.log(response.json());
+                return response.json();
             }
             else{
                 console.log("Error en la peticion");
@@ -23,9 +23,9 @@ class EstadoDetalleMantenimientoController {
         console.log("se inicio la peticion!");
         this.edrc = new EstadoDetalleMantenimientoResourceClient();
 
-        this.edrc.mantenimientosNoTerminados().then(function(response){
+       return  this.edrc.mantenimientosNoTerminados().then(function(response){
             if(response.ok){
-                console.log(response.json());
+              return response.json();
             }
             else{
                 console.log("Error en la peticion");
@@ -36,4 +36,4 @@ class EstadoDetalleMantenimientoController {
 
 }
 let e = new EstadoDetalleMantenimientoController();
-export default e.findMantenimientosTerminados();
+export default e;
