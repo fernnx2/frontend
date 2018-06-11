@@ -104,8 +104,13 @@
                       </template>  
                       
                    <div class="ed-container" ng-controller="data">
-                       <h2></h2>
+                        <div class="ui info message ed-item" id="mensaje">
+                                <div class="header">
+                                    Mantenimientos Terminados:
+                                </div>
+                        </div>
                        <div class="ed-item">
+
                             <tabla-data>
                              <ul slot="responsable" ng-repeat="z in rest">
              <li>{{z.detalleManteniminetoIdDetalleMantenimineto.ordenTrabajoIdOrdenTrabajo.solicitudIdSolicitud.responsable}}</li>
@@ -135,6 +140,48 @@
                   
                 </div>
            </div>
+           <div class="ui  hidden divider"></div>
+
+           <div class="ed-container" ng-controller="noterminados">
+               <div class="ed-item">
+                    <div class="ui info message" id="mensaje">
+                            <div class="header">
+                                Mantenimientos No Terminados:
+                            </div>
+                        </div>
+               </div>
+
+               <div class="ed-item" >
+                   <div class="ui hidden divider"></div>
+                    <tabla-data>
+                            <ul slot="responsable" ng-repeat="z in rest">
+            <li>{{z.detalleManteniminetoIdDetalleMantenimineto.ordenTrabajoIdOrdenTrabajo.solicitudIdSolicitud.responsable}}</li>
+                           </ul> 
+                               <ul slot="detalleHardware" ng-repeat="a in rest">
+                                  <li>{{a.detalleManteniminetoIdDetalleMantenimineto.detalleHardware}}</li>
+                              </ul>  
+                              <ul slot="detalleSotfware" ng-repeat="b in rest">
+                                   <li>{{b.detalleManteniminetoIdDetalleMantenimineto.detalleSotfware}}</li>
+                               </ul> 
+                               <ul slot="sotfware" ng-repeat="c in rest">
+                                       <li>{{c.detalleManteniminetoIdDetalleMantenimineto.sotfware}}</li>
+                               </ul>   
+                               <ul slot="observaciones" ng-repeat="d in rest">
+                                           <li>{{d.observaciones}}</li>
+                               </ul>
+                               <ul slot="fechaInicio" ng-repeat="e in rest">
+                                       <li>{{e.detalleManteniminetoIdDetalleMantenimineto.ordenTrabajoIdOrdenTrabajo.fechaInicio}}</li>
+                              </ul>
+                              <ul slot="tipoProcedimiento" ng-repeat="f in rest">
+                                   <li>{{f.procedimientoIdProcedimiento.tipoProcedimiento}}</li>
+                              </ul> 
+                              
+                               
+                           </tabla-data>
+               </div>
+           </div>
+
+           
             
 </body>
 </html>
