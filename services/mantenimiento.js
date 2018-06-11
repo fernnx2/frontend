@@ -5,7 +5,7 @@ var mantenimiento = angular.module('mantenimiento',[]);
 mantenimiento.controller('data', function($scope){
     $scope.datos = [{"fechaInicio":"23132","responsable":"tsdf","tipo":"ds","fechaFin":"sds"},{"fechaInicio":"23132","responsable":"tsdf","tipo":"ds","fechaFin":"sds"}];
     $scope.rest;
-    let mantenimietosTerminados = e.findMantenimientosNoTerminados();
+    let mantenimietosTerminados = e.findMantenimientosTerminados();
     mantenimietosTerminados.then(function(response){
         $scope.$apply(function(){
             $scope.rest = response;
